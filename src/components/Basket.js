@@ -17,6 +17,18 @@ const Basket = (props) => {
     -500
   );
 
+  const onAddClick = () => {
+    console.log("CLICKED");
+    const newItems = [{
+      uid: "some-random-uid-" + new Date(),
+      qty: 1,
+      price: 101,
+      description: "Новый товар"
+    }, ...items];
+    console.log("added", newItems);
+    setItems(newItems);
+  }
+
   return (
     <div className="Basket">
       <BasketHeader count={countItemsInBasket} />
@@ -34,8 +46,9 @@ const Basket = (props) => {
       <Button
         value="Продолжить покупку"
         onClickHandler={() => alert("Продолжить")}
-        className="btn-proceed"
+        proceed={true}
       />
+      <Button onClickHandler={onAddClick} value="Добавить" />
     </div>
   );
 };

@@ -22,21 +22,6 @@ import Button from "./Button";
 // }
 
 const Counter = ({ value, uid, items, setItems }) => {
-  // const [qty, setQty] = useState(value)
-
-  // const setQtyWithCheck = (value) => {
-  //   let qty = parseInt(value);
-  //   if (qty < 0 || isNaN(qty)) {
-  //     qty = 0;
-  //   }
-  //   setQty(qty);
-  // }
-
-  // const qtyInputChange = (ev) => {
-  //   setQtyWithCheck(ev.target.value);
-  // };
-  // const qtyAdd = () => setQtyWithCheck(qty + 1)
-  // const qtySub = () => setQtyWithCheck(qty - 1)
   const setQtyWithCheck = (updateValueFn) => {
     const newItems = items.slice();
     const index = newItems.findIndex(item => item.uid === uid);
